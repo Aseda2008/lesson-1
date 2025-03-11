@@ -8,10 +8,23 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    footer{
-        margin-top: auto;
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0c0c0c9b;
+      padding: 20px 0;
     }
+    
+  
+    
 }
+.line{
+  width: 100%;
+  background: rgba(137, 33, 33, 0.731);
+  height: 1px;
+  box-shadow: 1px 1px 15px gray;
+ } 
 .hero{
    display: flex;
    align-items: center;

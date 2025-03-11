@@ -9,7 +9,7 @@ function Hero(){
     const [name,setName] = useState("")
     const [price,setPrice] = useState("")
     const [todo,setTodo] = useState([])
-function success(){
+    function successMessage(){
     toast.success('🦄 Wow so easy!', {
         position: "top-right",
         autoClose: 5000,
@@ -20,7 +20,21 @@ function success(){
         progress: undefined,
         theme: "colored",
         });
-}
+    }
+    function unsuccessfulMessage(){
+        <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        />
+    }
     function AddTodo(){
         if(url.trim() === "" || name.trim() === "" || price.trim() === ""){
 alert(404)
@@ -38,12 +52,11 @@ alert(404)
 let result = [...todo,newToDo]
 setTodo(result)
 localStorage.setItem("list",JSON.stringify(result))    
-success()
+successMessage()
     }
     setUrl("")
     setName("")
-    setPrice("")}
-    
+    setPrice("")} 
     useEffect(() => {
         let get = JSON.parse(localStorage.getItem("list")) || []
         setTodo(get)
@@ -69,7 +82,6 @@ setTodo(res)
         localStorage.setItem("list",JSON.stringify(res))
         setTodo(res)
     }
-    
   return(
        <div className="container">
         <div className="hero flex-items-center, justify-center, mt-10 ">
@@ -174,7 +186,7 @@ setTodo(res)
             </td>
             <td className="px-6 py-4">
                 <button className="font-medium text-red-600 dark:text-red-500 hover:underline"
-                onClick={() => delToDo(el.id)}>Remove</button>
+                onClick={() => {delToDo(el.id),unsuccessfulMessage()}}>Remove</button>
             </td>
         </tr>
           ))}
