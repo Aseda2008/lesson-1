@@ -112,12 +112,12 @@ header {
   }
   
   button:nth-child(19), button:nth-child(20) {
-    background-color: #f44336; /* Тазалоо жана өчүрүү кнопкалары */
+    background-color: #f44336; 
     color: white;
   }
-  .line{
+  /* .line{
     width: 100%;
     background: rgba(137, 33, 33, 0.731);
     height: 1px;
     box-shadow: 1px 1px 15px gray;
-   } 
+   }  */
